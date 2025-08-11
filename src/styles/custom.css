@@ -1,0 +1,12 @@
+/* Add your custom styles here */
+
+.nav-tabs .nav-link.active {
+  border-bottom: 2px solid #ffc107 !important;
+  color: #000 !important;
+  font-weight: bold;
+}
+
+.nav-tabs .nav-link {
+  border-bottom: 2px solid transparent;
+  color: #6c757d;
+}
