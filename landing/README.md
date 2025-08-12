@@ -1,67 +1,67 @@
-# Trade API Landing Page & Documentation
+# Проект лендинга для TradeAPI
 
-This project is a responsive landing page for the Trade API, built using React, TypeScript, and Vite. It features a dynamic API documentation browser that is automatically generated from Protobuf (`.proto`) definition files.
+Этот проект представляет собой адаптивную целевую страницу для Trade API, созданную с использованием React, TypeScript и Vite. Он включает в себя динамический просмотрщик документации API, который автоматически генерируется из файлов определений Protobuf (`.proto`).
 
-## Features
+## Возможности
 
--   **React + TypeScript:** A modern, type-safe frontend stack.
--   **Vite:** Fast development server and build tool.
--   **Bootstrap & React-Bootstrap:** For responsive UI components.
--   **Automatic API Spec Generation:** A script parses `.proto` files to generate a JSON specification, which is then used to render the API documentation.
--   **ESLint:** For code quality and consistency.
+-   **React + TypeScript:** Современный, типобезопасный фронтенд-стек.
+-   **Vite:** Быстрый сервер для разработки и инструмент с��орки.
+-   **Bootstrap & React-Bootstrap:** Для адаптивных компонентов пользовательского интерфейса.
+-   **Автоматическая генерация спецификации API:** Скрипт анализирует файлы `.proto` для создания спецификации в формате JSON, которая затем используется для отображения документации API.
+-   **ESLint:** Для качества и консистентности кода.
 
-## Getting Started
+## Начало работы
 
-### Prerequisites
+### Предварительные требования
 
--   Node.js (v18.x or later recommended)
+-   Node.js (рекомендуется v18.x или новее)
 -   npm
 
-### Installation
+### Установка
 
-1.  Clone the repository.
-2.  Navigate to the `landing` directory:
+1.  Склонируйте репозиторий.
+2.  Перейдите в директорию `landing`:
     ```bash
     cd landing
     ```
-3.  Install the dependencies:
+3.  Установите зависимости:
     ```bash
     npm install
     ```
 
-## Available Scripts
+## Доступные скрипты
 
-In the `landing` directory, you can run the following commands:
+В директории `landing` вы можете выполнять следующие команды:
 
 ### `npm run dev`
 
-Starts the development server on `http://localhost:5173` (or the next available port). It automatically watches for file changes and updates the application using Hot Module Replacement (HMR).
+Запускает сервер для разработки по адресу `http://localhost:5173` (или на следующем доступном порту). Он автоматически отслеживает изменения в файлах и обновляет приложение с помощью горячей замены модулей (HMR).
 
-This command first runs `npm run generate-api` to ensure the API documentation is up-to-date before starting the server.
+Эта команда сначала выполняет `npm run generate-api`, чтобы убедиться, что документация API актуальна перед запуском сервера.
 
 ### `npm run build`
 
-Builds the application for production. The output is placed in the `dist` directory. This command also ensures the API specification is generated before building.
+Собирает приложение для продакшена. Результат помещается в директорию `dist`. Эта команда также обеспечивает генерацию спецификации API перед сборкой.
 
 ### `npm run lint`
 
-Lints the project files using ESLint to check for code quality and style issues.
+Проверяет файлы проекта с помощью ESLint на наличие проблем с качеством и стилем кода.
 
 ### `npm run preview`
 
-Starts a local server to preview the production build from the `dist` directory.
+Запускает локальный сервер для предпросмотра продакшн-сборки из директории `dist`.
 
 ### `npm run generate-api`
 
-Manually runs the script to generate the `src/api-spec.json` file from the `.proto` definitions. The script's configuration can be found in `scripts/generate-api-spec.cjs`.
+Вручную запускает скрипт для генерации файла `src/api-spec.json` из определений `.proto`. Конфигурацию скрипта можно найти в `scripts/generate-api-spec.cjs`.
 
-## API Documentation Generation
+## Генерация документации API
 
-The core feature of this application is its ability to display API documentation sourced from `.proto` files.
+Ключевой особенностью этого приложения является его способность отображать документацию API, полученную из файлов `.proto`.
 
--   **Source:** The `.proto` files are expected to be located in a specific directory outside of this project (see `scripts/generate-api-spec.cjs` for the exact path configuration).
--   **Process:** The `scripts/generate-api-spec.cjs` script uses `protobufjs` to parse the service, message, and enum definitions from the `.proto` files.
--   **Output:** The script generates a structured JSON file at `src/api-spec.json`.
--   **Rendering:** The React application reads `src/api-spec.json` and dynamically renders the documentation, including services, methods, request/response types, and descriptions.
+-   **Источник:** Ожидается, что файлы `.proto` будут находиться в определенной директории за пределами этого проекта (точное расположение см. в конфигурации `scripts/generate-api-spec.cjs`).
+-   **Процесс:** Скрипт `scripts/generate-api-spec.cjs` использует `protobufjs` для анализа определений сервисов, сообщений и перечислений из файлов `.proto`.
+-   **Вывод:** Скрипт генерирует структурированный JSON-файл по пути `src/api-spec.json`.
+-   **Отображение:** Приложение React читает `src/api-spec.json` и динамически отображает документацию, включая сервисы, методы, типы запросов/ответов и описания.
 
-**Note:** Do not edit `src/api-spec.json` manually, as it will be overwritten the next time the generation script runs.
+**Примечание:** Не редактируйте `src/api-spec.json` вручную, так как он будет перезаписан при следующем запуске скрипта генерации.

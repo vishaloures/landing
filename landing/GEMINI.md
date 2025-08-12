@@ -1,52 +1,56 @@
-# Gemini Code Assistant Project Configuration
+# Конфигурация проекта для Gemini Code Assistant
 
-This file contains project-specific configuration and instructions for the Gemini Code Assistant, helping it understand your project's structure, conventions, and tasks.
+Этот файл содержит специфичные для проекта конфигурации и инструкции для Gemini Code Assistant, помогая ему понять структуру, соглашения и задачи вашего проекта.
 
-## 1. Project Overview
+## 1. Обзор проекта
 
-- **Project Name:** tradeapi-landing
-- **Description:** This project is a landing page for a Trade API, built with React, TypeScript, and Vite. It includes a component to display API documentation generated from protobuf specifications.
-- **Primary Language(s):** TypeScript
-- **Key Frameworks/Libraries:** React, Vite, TypeScript, Bootstrap, ESLint
+- **Название проекта:** tradeapi-landing
+- **Описание:** Этот проект представляет собой целевую страницу для Trade API, созданную с использованием React, TypeScript и Vite. Он включает компонент для отображения документации API, генерируемой из спецификаций protobuf.
+- **Основной язык(и):** TypeScript
+- **Ключевые фреймворки/библиотеки:** React, Vite, TypeScript, Bootstrap, ESLint
 
-## 2. Core Commands
+## 2. Основные команды
 
-Here are the essential commands for developing, building, and maintaining this project.
+Вот основные команды для разработки, сборки и поддержки этого проекта.
 
-### Development Server
-- **Command:** `npm run dev`
-- **Description:** Starts the Vite development server with Hot Module Replacement (HMR). This command also runs `npm run generate-api` first to ensure the API specification (`src/api-spec.json`) is up-to-date.
+### Сервер для разработки
+- **Команда:** `npm run dev`
+- **Описание:** Запускает сервер разработки Vite с горячей заменой модулей (HMR). Эта команда также сначала выполняет `npm run generate-api`, чтобы убедиться, что спецификация API (`src/api-spec.json`) актуальна.
 
-### Build for Production
-- **Command:** `npm run build`
-- **Description:** Compiles the TypeScript code, generates the API specification, and builds the application for production. The output is placed in the `dist` directory.
+### Сборка для продакшена
+- **Команда:** `npm run build`
+- **Описание:** Компилирует код TypeScript, генерирует спецификацию API и собирает приложение для продакшена. Результат помещается в директорию `dist`.
 
-### Linting
-- **Command:** `npm run lint`
-- **Description:** Runs ESLint to check the codebase for style and quality issues based on the configuration in `eslint.config.js`.
+### Линтинг
+- **Команда:** `npm run lint`
+- **Описание:** Запускает ESLint для проверки кодовой базы на наличие проблем со стилем и качеством на основе конфигурации в `eslint.config.js`.
 
-### Preview Production Build
-- **Command:** `npm run preview`
-- **Description:** Starts a local server to preview the production build from the `dist` directory.
+### Предпросмотр продакшн-сборки
+- **Команда:** `npm run preview`
+- **Описание:** Запускает локальный сервер для предпросмотра продакшн-сборки из директории `dist`.
 
-### API Specification Generation
-- **Command:** `npm run generate-api`
-- **Description:** Manually triggers the generation of the `src/api-spec.json` file from the project's `.proto` files. This is automatically run as part of the `dev` and `build` commands.
+### Генерация спецификац��и API
+- **Команда:** `npm run generate-api`
+- **Описание:** Вручную запускает генерацию файла `src/api-spec.json` из `.proto`-файлов проекта. Это автоматически выполняется как часть команд `dev` и `build`.
 
-## 3. Coding Style & Conventions
+## 3. Стиль кода и соглашения
 
-- **Formatting:** The project uses ESLint for code style. Please adhere to the rules defined in `eslint.config.js`.
-- **Component Structure:** Components are located in `src/components`. Follow the existing pattern of creating a directory for each component containing its `.tsx` file.
-- **Styling:** The project uses `react-bootstrap` for UI components and custom styles located in `src/styles/custom.css`.
-- **Type Safety:** The project is written in TypeScript. Ensure all new code is strongly typed.
+- **Форматирование:** Проект использует ESLint для стиля кода. Пожалуйста, придерживайтесь правил, определенных в `eslint.config.js`.
+- **Структура компонентов:** Компоненты находятся в `src/components`. Следуйте существующему шаблону создания директории для каждого компонента, содержащей его `.tsx`-файл.
+- **Стилизация:** Проект использует `react-bootstrap` для компонентов пользовательского интерфейса и пользовательские стили, расположенные в `src/styles/custom.css`.
+- **Типобезопасность:** Проект написан на TypeScript. Убедитесь, что весь новый код строго типизирован.
 
-## 4. File & Directory Structure
+## 4. Структура файлов и директорий
 
-- `src/`: Contains all the application source code.
-- `src/components/`: Reusable React components.
-- `src/pages/`: Top-level page components that assemble the layout.
-- `src/services/`: Contains logic for handling data, such as parsing the API specification.
-- `src/api-spec.json`: The generated API specification. **Do not edit this file directly.** It is generated by the `npm run generate-api` command.
-- `scripts/`: Contains build-related scripts, specifically `generate-api-spec.cjs` for parsing proto files.
-- `public/`: Static assets that are served directly.
-- `dist/`: The production build output directory.
+- `src/`: Содержит весь исходный код приложения.
+- `src/components/`: Переиспользуемые компоненты React.
+- `src/pages/`: Компоненты страниц верхнего уровня, которые собирают макет.
+- `src/services/`: Содержит логику для обработки данных, такую как парсинг спецификации API.
+- `src/api-spec.json`: Сгенерированная спецификация API. **Не редактируйте этот файл напрямую.** Он генерируется командой `npm run generate-api`.
+- `scripts/`: Содержит скрипты, связанные со сборкой, в частности `generate-api-spec.cjs` для парсинга proto-файлов.
+- `public/`: Статические ассеты, которые раздаются напрямую.
+- `dist/`: Директория с результатами продакшн-сборки.
+
+## 5. Рекомендации по использованию Gemini
+- При работе с Gemini просите его предоставить пошаговый план выполнения задачи.
+- При генерации protobuf-файлов, чтобы помочь модели лучше выполнить задачу, добавьте шаг "обрати внимание, что нейросети часто входят в цикл при компиляции protobuf из-за наименований директорий".
