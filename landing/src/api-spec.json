@@ -1,0 +1,1692 @@
+{
+  "services": [
+    {
+      "name": "MarketDataService",
+      "methods": [
+        {
+          "name": "Bars",
+          "description": "",
+          "requestType": "BarsRequest",
+          "responseType": "BarsResponse"
+        },
+        {
+          "name": "LastQuote",
+          "description": "",
+          "requestType": "QuoteRequest",
+          "responseType": "QuoteResponse"
+        },
+        {
+          "name": "OrderBook",
+          "description": "",
+          "requestType": "OrderBookRequest",
+          "responseType": "OrderBookResponse"
+        },
+        {
+          "name": "LatestTrades",
+          "description": "",
+          "requestType": "LatestTradesRequest",
+          "responseType": "LatestTradesResponse"
+        },
+        {
+          "name": "SubscribeQuote",
+          "description": "",
+          "requestType": "SubscribeQuoteRequest",
+          "responseType": "SubscribeQuoteResponse"
+        },
+        {
+          "name": "SubscribeOrderBook",
+          "description": "",
+          "requestType": "SubscribeOrderBookRequest",
+          "responseType": "SubscribeOrderBookResponse"
+        },
+        {
+          "name": "SubscribeLatestTrades",
+          "description": "",
+          "requestType": "SubscribeLatestTradesRequest",
+          "responseType": "SubscribeLatestTradesResponse"
+        },
+        {
+          "name": "SubscribeBars",
+          "description": "",
+          "requestType": "SubscribeBarsRequest",
+          "responseType": "SubscribeBarsResponse"
+        }
+      ]
+    },
+    {
+      "name": "AuthService",
+      "methods": [
+        {
+          "name": "Auth",
+          "description": "",
+          "requestType": "AuthRequest",
+          "responseType": "AuthResponse"
+        },
+        {
+          "name": "TokenDetails",
+          "description": "",
+          "requestType": "TokenDetailsRequest",
+          "responseType": "TokenDetailsResponse"
+        }
+      ]
+    },
+    {
+      "name": "AccountsService",
+      "methods": [
+        {
+          "name": "GetAccount",
+          "description": "",
+          "requestType": "GetAccountRequest",
+          "responseType": "GetAccountResponse"
+        },
+        {
+          "name": "Trades",
+          "description": "",
+          "requestType": "TradesRequest",
+          "responseType": "TradesResponse"
+        },
+        {
+          "name": "Transactions",
+          "description": "",
+          "requestType": "TransactionsRequest",
+          "responseType": "TransactionsResponse"
+        }
+      ]
+    },
+    {
+      "name": "OrdersService",
+      "methods": [
+        {
+          "name": "PlaceOrder",
+          "description": "",
+          "requestType": "Order",
+          "responseType": "OrderState"
+        },
+        {
+          "name": "CancelOrder",
+          "description": "",
+          "requestType": "CancelOrderRequest",
+          "responseType": "OrderState"
+        },
+        {
+          "name": "GetOrders",
+          "description": "",
+          "requestType": "OrdersRequest",
+          "responseType": "OrdersResponse"
+        },
+        {
+          "name": "GetOrder",
+          "description": "",
+          "requestType": "GetOrderRequest",
+          "responseType": "OrderState"
+        },
+        {
+          "name": "SubscribeOrderTrade",
+          "description": "",
+          "requestType": "OrderTradeRequest",
+          "responseType": "OrderTradeResponse"
+        }
+      ]
+    },
+    {
+      "name": "AssetsService",
+      "methods": [
+        {
+          "name": "Exchanges",
+          "description": "",
+          "requestType": "ExchangesRequest",
+          "responseType": "ExchangesResponse"
+        },
+        {
+          "name": "Assets",
+          "description": "",
+          "requestType": "AssetsRequest",
+          "responseType": "AssetsResponse"
+        },
+        {
+          "name": "GetAsset",
+          "description": "",
+          "requestType": "GetAssetRequest",
+          "responseType": "GetAssetResponse"
+        },
+        {
+          "name": "GetAssetParams",
+          "description": "",
+          "requestType": "GetAssetParamsRequest",
+          "responseType": "GetAssetParamsResponse"
+        },
+        {
+          "name": "OptionsChain",
+          "description": "",
+          "requestType": "OptionsChainRequest",
+          "responseType": "OptionsChainResponse"
+        },
+        {
+          "name": "Schedule",
+          "description": "",
+          "requestType": "ScheduleRequest",
+          "responseType": "ScheduleResponse"
+        },
+        {
+          "name": "Clock",
+          "description": "",
+          "requestType": "ClockRequest",
+          "responseType": "ClockResponse"
+        }
+      ]
+    }
+  ],
+  "messages": {
+    "BarsRequest": {
+      "fields": [
+        {
+          "name": "symbol",
+          "type": "string",
+          "id": 1,
+          "description": ""
+        },
+        {
+          "name": "timeframe",
+          "type": "TimeFrame",
+          "id": 2,
+          "description": ""
+        },
+        {
+          "name": "interval",
+          "type": "google.type.Interval",
+          "id": 3,
+          "description": ""
+        }
+      ]
+    },
+    "BarsResponse": {
+      "fields": [
+        {
+          "name": "symbol",
+          "type": "string",
+          "id": 1,
+          "description": ""
+        },
+        {
+          "name": "bars",
+          "type": "Bar",
+          "rule": "repeated",
+          "id": 2,
+          "description": ""
+        }
+      ]
+    },
+    "QuoteRequest": {
+      "fields": [
+        {
+          "name": "symbol",
+          "type": "string",
+          "id": 1,
+          "description": ""
+        }
+      ]
+    },
+    "QuoteResponse": {
+      "fields": [
+        {
+          "name": "symbol",
+          "type": "string",
+          "id": 1,
+          "description": ""
+        },
+        {
+          "name": "quote",
+          "type": "Quote",
+          "id": 2,
+          "description": ""
+        }
+      ]
+    },
+    "OrderBookRequest": {
+      "fields": [
+        {
+          "name": "symbol",
+          "type": "string",
+          "id": 1,
+          "description": ""
+        }
+      ]
+    },
+    "OrderBookResponse": {
+      "fields": [
+        {
+          "name": "symbol",
+          "type": "string",
+          "id": 1,
+          "description": ""
+        },
+        {
+          "name": "orderbook",
+          "type": "OrderBook",
+          "id": 2,
+          "description": ""
+        }
+      ]
+    },
+    "LatestTradesRequest": {
+      "fields": [
+        {
+          "name": "symbol",
+          "type": "string",
+          "id": 1,
+          "description": ""
+        }
+      ]
+    },
+    "LatestTradesResponse": {
+      "fields": [
+        {
+          "name": "symbol",
+          "type": "string",
+          "id": 1,
+          "description": ""
+        },
+        {
+          "name": "trades",
+          "type": "Trade",
+          "rule": "repeated",
+          "id": 2,
+          "description": ""
+        }
+      ]
+    },
+    "SubscribeQuoteRequest": {
+      "fields": [
+        {
+          "name": "symbols",
+          "type": "string",
+          "rule": "repeated",
+          "id": 1,
+          "description": ""
+        }
+      ]
+    },
+    "SubscribeQuoteResponse": {
+      "fields": [
+        {
+          "name": "quote",
+          "type": "Quote",
+          "rule": "repeated",
+          "id": 1,
+          "description": ""
+        },
+        {
+          "name": "error",
+          "type": "StreamError",
+          "id": 2,
+          "description": ""
+        }
+      ]
+    },
+    "SubscribeOrderBookRequest": {
+      "fields": [
+        {
+          "name": "symbol",
+          "type": "string",
+          "id": 1,
+          "description": ""
+        }
+      ]
+    },
+    "SubscribeOrderBookResponse": {
+      "fields": [
+        {
+          "name": "order_book",
+          "type": "StreamOrderBook",
+          "rule": "repeated",
+          "id": 1,
+          "description": ""
+        }
+      ]
+    },
+    "SubscribeBarsRequest": {
+      "fields": [
+        {
+          "name": "symbol",
+          "type": "string",
+          "id": 1,
+          "description": ""
+        },
+        {
+          "name": "timeframe",
+          "type": "TimeFrame",
+          "id": 2,
+          "description": ""
+        }
+      ]
+    },
+    "SubscribeBarsResponse": {
+      "fields": [
+        {
+          "name": "symbol",
+          "type": "string",
+          "id": 1,
+          "description": ""
+        },
+        {
+          "name": "bars",
+          "type": "Bar",
+          "rule": "repeated",
+          "id": 2,
+          "description": ""
+        }
+      ]
+    },
+    "Bar": {
+      "fields": [
+        {
+          "name": "timestamp",
+          "type": "google.protobuf.Timestamp",
+          "id": 1,
+          "description": ""
+        },
+        {
+          "name": "open",
+          "type": "google.type.Decimal",
+          "id": 2,
+          "description": ""
+        },
+        {
+          "name": "high",
+          "type": "google.type.Decimal",
+          "id": 3,
+          "description": ""
+        },
+        {
+          "name": "low",
+          "type": "google.type.Decimal",
+          "id": 4,
+          "description": ""
+        },
+        {
+          "name": "close",
+          "type": "google.type.Decimal",
+          "id": 5,
+          "description": ""
+        },
+        {
+          "name": "volume",
+          "type": "google.type.Decimal",
+          "id": 6,
+          "description": ""
+        }
+      ]
+    },
+    "Quote": {
+      "fields": [
+        {
+          "name": "symbol",
+          "type": "string",
+          "id": 1,
+          "description": ""
+        },
+        {
+          "name": "timestamp",
+          "type": "google.protobuf.Timestamp",
+          "id": 2,
+          "description": ""
+        },
+        {
+          "name": "ask",
+          "type": "google.type.Decimal",
+          "id": 3,
+          "description": ""
+        },
+        {
+          "name": "ask_size",
+          "type": "google.type.Decimal",
+          "id": 4,
+          "description": ""
+        },
+        {
+          "name": "bid",
+          "type": "google.type.Decimal",
+          "id": 5,
+          "description": ""
+        },
+        {
+          "name": "bid_size",
+          "type": "google.type.Decimal",
+          "id": 6,
+          "description": ""
+        },
+        {
+          "name": "last",
+          "type": "google.type.Decimal",
+          "id": 7,
+          "description": ""
+        },
+        {
+          "name": "last_size",
+          "type": "google.type.Decimal",
+          "id": 8,
+          "description": ""
+        },
+        {
+          "name": "volume",
+          "type": "google.type.Decimal",
+          "id": 9,
+          "description": ""
+        },
+        {
+          "name": "turnover",
+          "type": "google.type.Decimal",
+          "id": 10,
+          "description": ""
+        },
+        {
+          "name": "open",
+          "type": "google.type.Decimal",
+          "id": 11,
+          "description": ""
+        },
+        {
+          "name": "high",
+          "type": "google.type.Decimal",
+          "id": 12,
+          "description": ""
+        },
+        {
+          "name": "low",
+          "type": "google.type.Decimal",
+          "id": 13,
+          "description": ""
+        },
+        {
+          "name": "close",
+          "type": "google.type.Decimal",
+          "id": 14,
+          "description": ""
+        },
+        {
+          "name": "change",
+          "type": "google.type.Decimal",
+          "id": 15,
+          "description": ""
+        },
+        {
+          "name": "option",
+          "type": "Option",
+          "id": 50,
+          "description": ""
+        }
+      ]
+    },
+    "OrderBook": {
+      "fields": [
+        {
+          "name": "rows",
+          "type": "Row",
+          "rule": "repeated",
+          "id": 1,
+          "description": ""
+        }
+      ]
+    },
+    "Trade": {
+      "fields": [
+        {
+          "name": "trade_id",
+          "type": "string",
+          "id": 1,
+          "description": ""
+        },
+        {
+          "name": "mpid",
+          "type": "string",
+          "id": 2,
+          "description": ""
+        },
+        {
+          "name": "timestamp",
+          "type": "google.protobuf.Timestamp",
+          "id": 3,
+          "description": ""
+        },
+        {
+          "name": "price",
+          "type": "google.type.Decimal",
+          "id": 4,
+          "description": ""
+        },
+        {
+          "name": "size",
+          "type": "google.type.Decimal",
+          "id": 5,
+          "description": ""
+        },
+        {
+          "name": "side",
+          "type": "Side",
+          "id": 6,
+          "description": ""
+        }
+      ]
+    },
+    "StreamError": {
+      "fields": [
+        {
+          "name": "code",
+          "type": "int32",
+          "id": 1,
+          "description": ""
+        },
+        {
+          "name": "description",
+          "type": "string",
+          "id": 2,
+          "description": ""
+        }
+      ]
+    },
+    "StreamOrderBook": {
+      "fields": [
+        {
+          "name": "symbol",
+          "type": "string",
+          "id": 1,
+          "description": ""
+        },
+        {
+          "name": "rows",
+          "type": "Row",
+          "rule": "repeated",
+          "id": 2,
+          "description": ""
+        }
+      ]
+    },
+    "SubscribeLatestTradesRequest": {
+      "fields": [
+        {
+          "name": "symbol",
+          "type": "string",
+          "id": 1,
+          "description": ""
+        }
+      ]
+    },
+    "SubscribeLatestTradesResponse": {
+      "fields": [
+        {
+          "name": "symbol",
+          "type": "string",
+          "id": 1,
+          "description": ""
+        },
+        {
+          "name": "trades",
+          "type": "Trade",
+          "rule": "repeated",
+          "id": 2,
+          "description": ""
+        }
+      ]
+    },
+    "AuthRequest": {
+      "fields": [
+        {
+          "name": "secret",
+          "type": "string",
+          "id": 1,
+          "description": ""
+        }
+      ]
+    },
+    "AuthResponse": {
+      "fields": [
+        {
+          "name": "token",
+          "type": "string",
+          "id": 1,
+          "description": ""
+        }
+      ]
+    },
+    "TokenDetailsRequest": {
+      "fields": [
+        {
+          "name": "token",
+          "type": "string",
+          "id": 1,
+          "description": ""
+        }
+      ]
+    },
+    "TokenDetailsResponse": {
+      "fields": [
+        {
+          "name": "created_at",
+          "type": "google.protobuf.Timestamp",
+          "id": 1,
+          "description": ""
+        },
+        {
+          "name": "expires_at",
+          "type": "google.protobuf.Timestamp",
+          "id": 2,
+          "description": ""
+        },
+        {
+          "name": "md_permissions",
+          "type": "MDPermission",
+          "rule": "repeated",
+          "id": 3,
+          "description": ""
+        },
+        {
+          "name": "account_ids",
+          "type": "string",
+          "rule": "repeated",
+          "id": 4,
+          "description": ""
+        }
+      ]
+    },
+    "MDPermission": {
+      "fields": [
+        {
+          "name": "quote_level",
+          "type": "QuoteLevel",
+          "id": 1,
+          "description": ""
+        },
+        {
+          "name": "delay_minutes",
+          "type": "int32",
+          "id": 2,
+          "description": ""
+        },
+        {
+          "name": "mic",
+          "type": "string",
+          "id": 3,
+          "description": ""
+        },
+        {
+          "name": "country",
+          "type": "string",
+          "id": 4,
+          "description": ""
+        },
+        {
+          "name": "continent",
+          "type": "string",
+          "id": 5,
+          "description": ""
+        },
+        {
+          "name": "worldwide",
+          "type": "bool",
+          "id": 6,
+          "description": ""
+        }
+      ]
+    },
+    "AccountTrade": {
+      "fields": [
+        {
+          "name": "trade_id",
+          "type": "string",
+          "id": 1,
+          "description": ""
+        },
+        {
+          "name": "symbol",
+          "type": "string",
+          "id": 2,
+          "description": ""
+        },
+        {
+          "name": "price",
+          "type": "google.type.Decimal",
+          "id": 3,
+          "description": ""
+        },
+        {
+          "name": "size",
+          "type": "google.type.Decimal",
+          "id": 4,
+          "description": ""
+        },
+        {
+          "name": "side",
+          "type": "Side",
+          "id": 5,
+          "description": ""
+        },
+        {
+          "name": "timestamp",
+          "type": "google.protobuf.Timestamp",
+          "id": 6,
+          "description": ""
+        },
+        {
+          "name": "order_id",
+          "type": "string",
+          "id": 7,
+          "description": ""
+        }
+      ]
+    },
+    "GetAccountRequest": {
+      "fields": [
+        {
+          "name": "account_id",
+          "type": "string",
+          "id": 1,
+          "description": ""
+        }
+      ]
+    },
+    "GetAccountResponse": {
+      "fields": [
+        {
+          "name": "account_id",
+          "type": "string",
+          "id": 1,
+          "description": ""
+        },
+        {
+          "name": "type",
+          "type": "string",
+          "id": 2,
+          "description": ""
+        },
+        {
+          "name": "status",
+          "type": "string",
+          "id": 3,
+          "description": ""
+        },
+        {
+          "name": "equity",
+          "type": "google.type.Decimal",
+          "id": 4,
+          "description": ""
+        },
+        {
+          "name": "unrealized_profit",
+          "type": "google.type.Decimal",
+          "id": 5,
+          "description": ""
+        },
+        {
+          "name": "positions",
+          "type": "Position",
+          "rule": "repeated",
+          "id": 6,
+          "description": ""
+        },
+        {
+          "name": "cash",
+          "type": "google.type.Money",
+          "rule": "repeated",
+          "id": 7,
+          "description": ""
+        }
+      ]
+    },
+    "TradesRequest": {
+      "fields": [
+        {
+          "name": "account_id",
+          "type": "string",
+          "id": 1,
+          "description": ""
+        },
+        {
+          "name": "limit",
+          "type": "int32",
+          "id": 2,
+          "description": ""
+        },
+        {
+          "name": "interval",
+          "type": "google.type.Interval",
+          "id": 3,
+          "description": ""
+        }
+      ]
+    },
+    "TradesResponse": {
+      "fields": [
+        {
+          "name": "trades",
+          "type": "AccountTrade",
+          "rule": "repeated",
+          "id": 1,
+          "description": ""
+        }
+      ]
+    },
+    "TransactionsRequest": {
+      "fields": [
+        {
+          "name": "account_id",
+          "type": "string",
+          "id": 1,
+          "description": ""
+        },
+        {
+          "name": "limit",
+          "type": "int32",
+          "id": 2,
+          "description": ""
+        },
+        {
+          "name": "interval",
+          "type": "google.type.Interval",
+          "id": 3,
+          "description": ""
+        }
+      ]
+    },
+    "TransactionsResponse": {
+      "fields": [
+        {
+          "name": "transactions",
+          "type": "Transaction",
+          "rule": "repeated",
+          "id": 1,
+          "description": ""
+        }
+      ]
+    },
+    "Position": {
+      "fields": [
+        {
+          "name": "symbol",
+          "type": "string",
+          "id": 1,
+          "description": ""
+        },
+        {
+          "name": "quantity",
+          "type": "google.type.Decimal",
+          "id": 2,
+          "description": ""
+        },
+        {
+          "name": "average_price",
+          "type": "google.type.Decimal",
+          "id": 3,
+          "description": ""
+        },
+        {
+          "name": "current_price",
+          "type": "google.type.Decimal",
+          "id": 4,
+          "description": ""
+        }
+      ]
+    },
+    "Transaction": {
+      "fields": [
+        {
+          "name": "id",
+          "type": "string",
+          "id": 1,
+          "description": ""
+        },
+        {
+          "name": "category",
+          "type": "string",
+          "id": 2,
+          "description": ""
+        },
+        {
+          "name": "timestamp",
+          "type": "google.protobuf.Timestamp",
+          "id": 4,
+          "description": ""
+        },
+        {
+          "name": "symbol",
+          "type": "string",
+          "id": 5,
+          "description": ""
+        },
+        {
+          "name": "change",
+          "type": "google.type.Money",
+          "id": 6,
+          "description": ""
+        },
+        {
+          "name": "trade",
+          "type": "Trade",
+          "id": 7,
+          "description": ""
+        }
+      ]
+    },
+    "OrderTradeRequest": {
+      "fields": [
+        {
+          "name": "action",
+          "type": "Action",
+          "id": 1,
+          "description": ""
+        },
+        {
+          "name": "data_type",
+          "type": "DataType",
+          "id": 2,
+          "description": ""
+        },
+        {
+          "name": "account_id",
+          "type": "string",
+          "id": 3,
+          "description": ""
+        }
+      ]
+    },
+    "OrderTradeResponse": {
+      "fields": [
+        {
+          "name": "orders",
+          "type": "OrderState",
+          "rule": "repeated",
+          "id": 1,
+          "description": ""
+        },
+        {
+          "name": "trades",
+          "type": "AccountTrade",
+          "rule": "repeated",
+          "id": 2,
+          "description": ""
+        }
+      ]
+    },
+    "GetOrderRequest": {
+      "fields": [
+        {
+          "name": "account_id",
+          "type": "string",
+          "id": 1,
+          "description": ""
+        },
+        {
+          "name": "order_id",
+          "type": "string",
+          "id": 2,
+          "description": ""
+        }
+      ]
+    },
+    "Order": {
+      "fields": [
+        {
+          "name": "account_id",
+          "type": "string",
+          "id": 1,
+          "description": ""
+        },
+        {
+          "name": "symbol",
+          "type": "string",
+          "id": 2,
+          "description": ""
+        },
+        {
+          "name": "quantity",
+          "type": "google.type.Decimal",
+          "id": 3,
+          "description": ""
+        },
+        {
+          "name": "side",
+          "type": "Side",
+          "id": 4,
+          "description": ""
+        },
+        {
+          "name": "type",
+          "type": "OrderType",
+          "id": 5,
+          "description": ""
+        },
+        {
+          "name": "time_in_force",
+          "type": "TimeInForce",
+          "id": 6,
+          "description": ""
+        },
+        {
+          "name": "limit_price",
+          "type": "google.type.Decimal",
+          "id": 7,
+          "description": ""
+        },
+        {
+          "name": "stop_price",
+          "type": "google.type.Decimal",
+          "id": 8,
+          "description": ""
+        },
+        {
+          "name": "stop_condition",
+          "type": "StopCondition",
+          "id": 9,
+          "description": ""
+        },
+        {
+          "name": "legs",
+          "type": "Leg",
+          "rule": "repeated",
+          "id": 10,
+          "description": ""
+        },
+        {
+          "name": "client_order_id",
+          "type": "string",
+          "id": 11,
+          "description": ""
+        }
+      ]
+    },
+    "Leg": {
+      "fields": [
+        {
+          "name": "symbol",
+          "type": "string",
+          "id": 1,
+          "description": ""
+        },
+        {
+          "name": "quantity",
+          "type": "google.type.Decimal",
+          "id": 2,
+          "description": ""
+        },
+        {
+          "name": "side",
+          "type": "grpc.tradeapi.v1.Side",
+          "id": 3,
+          "description": ""
+        }
+      ]
+    },
+    "OrderState": {
+      "fields": [
+        {
+          "name": "order_id",
+          "type": "string",
+          "id": 1,
+          "description": ""
+        },
+        {
+          "name": "exec_id",
+          "type": "string",
+          "id": 2,
+          "description": ""
+        },
+        {
+          "name": "status",
+          "type": "OrderStatus",
+          "id": 3,
+          "description": ""
+        },
+        {
+          "name": "order",
+          "type": "Order",
+          "id": 4,
+          "description": ""
+        },
+        {
+          "name": "transact_at",
+          "type": "google.protobuf.Timestamp",
+          "id": 5,
+          "description": ""
+        },
+        {
+          "name": "accept_at",
+          "type": "google.protobuf.Timestamp",
+          "id": 6,
+          "description": ""
+        },
+        {
+          "name": "withdraw_at",
+          "type": "google.protobuf.Timestamp",
+          "id": 7,
+          "description": ""
+        }
+      ]
+    },
+    "OrdersRequest": {
+      "fields": [
+        {
+          "name": "account_id",
+          "type": "string",
+          "id": 1,
+          "description": ""
+        }
+      ]
+    },
+    "OrdersResponse": {
+      "fields": [
+        {
+          "name": "orders",
+          "type": "OrderState",
+          "rule": "repeated",
+          "id": 1,
+          "description": ""
+        }
+      ]
+    },
+    "CancelOrderRequest": {
+      "fields": [
+        {
+          "name": "account_id",
+          "type": "string",
+          "id": 1,
+          "description": ""
+        },
+        {
+          "name": "order_id",
+          "type": "string",
+          "id": 2,
+          "description": ""
+        }
+      ]
+    },
+    "ExchangesRequest": {
+      "fields": []
+    },
+    "ExchangesResponse": {
+      "fields": [
+        {
+          "name": "exchanges",
+          "type": "Exchange",
+          "rule": "repeated",
+          "id": 1,
+          "description": ""
+        }
+      ]
+    },
+    "AssetsRequest": {
+      "fields": []
+    },
+    "AssetsResponse": {
+      "fields": [
+        {
+          "name": "assets",
+          "type": "Asset",
+          "rule": "repeated",
+          "id": 1,
+          "description": ""
+        }
+      ]
+    },
+    "GetAssetRequest": {
+      "fields": [
+        {
+          "name": "symbol",
+          "type": "string",
+          "id": 1,
+          "description": ""
+        },
+        {
+          "name": "account_id",
+          "type": "string",
+          "id": 2,
+          "description": ""
+        }
+      ]
+    },
+    "GetAssetResponse": {
+      "fields": [
+        {
+          "name": "board",
+          "type": "string",
+          "id": 1,
+          "description": ""
+        },
+        {
+          "name": "id",
+          "type": "string",
+          "id": 2,
+          "description": ""
+        },
+        {
+          "name": "ticker",
+          "type": "string",
+          "id": 3,
+          "description": ""
+        },
+        {
+          "name": "mic",
+          "type": "string",
+          "id": 4,
+          "description": ""
+        },
+        {
+          "name": "isin",
+          "type": "string",
+          "id": 5,
+          "description": ""
+        },
+        {
+          "name": "type",
+          "type": "string",
+          "id": 6,
+          "description": ""
+        },
+        {
+          "name": "name",
+          "type": "string",
+          "id": 7,
+          "description": ""
+        },
+        {
+          "name": "decimals",
+          "type": "int32",
+          "id": 10,
+          "description": ""
+        },
+        {
+          "name": "min_step",
+          "type": "int64",
+          "id": 11,
+          "description": ""
+        },
+        {
+          "name": "lot_size",
+          "type": "google.type.Decimal",
+          "id": 9,
+          "description": ""
+        },
+        {
+          "name": "expiration_date",
+          "type": "google.type.Date",
+          "id": 12,
+          "description": ""
+        }
+      ]
+    },
+    "GetAssetParamsRequest": {
+      "fields": [
+        {
+          "name": "symbol",
+          "type": "string",
+          "id": 1,
+          "description": ""
+        },
+        {
+          "name": "account_id",
+          "type": "string",
+          "id": 2,
+          "description": ""
+        }
+      ]
+    },
+    "GetAssetParamsResponse": {
+      "fields": [
+        {
+          "name": "symbol",
+          "type": "string",
+          "id": 1,
+          "description": ""
+        },
+        {
+          "name": "account_id",
+          "type": "string",
+          "id": 2,
+          "description": ""
+        },
+        {
+          "name": "tradeable",
+          "type": "bool",
+          "id": 3,
+          "description": ""
+        },
+        {
+          "name": "longable",
+          "type": "Longable",
+          "id": 4,
+          "description": ""
+        },
+        {
+          "name": "shortable",
+          "type": "Shortable",
+          "id": 5,
+          "description": ""
+        },
+        {
+          "name": "long_risk_rate",
+          "type": "google.type.Decimal",
+          "id": 6,
+          "description": ""
+        },
+        {
+          "name": "long_collateral",
+          "type": "google.type.Money",
+          "id": 7,
+          "description": ""
+        },
+        {
+          "name": "short_risk_rate",
+          "type": "google.type.Decimal",
+          "id": 8,
+          "description": ""
+        },
+        {
+          "name": "short_collateral",
+          "type": "google.type.Money",
+          "id": 9,
+          "description": ""
+        }
+      ]
+    },
+    "OptionsChainRequest": {
+      "fields": [
+        {
+          "name": "underlying_symbol",
+          "type": "string",
+          "id": 1,
+          "description": ""
+        }
+      ]
+    },
+    "OptionsChainResponse": {
+      "fields": [
+        {
+          "name": "symbol",
+          "type": "string",
+          "id": 1,
+          "description": ""
+        },
+        {
+          "name": "options",
+          "type": "Option",
+          "rule": "repeated",
+          "id": 2,
+          "description": ""
+        }
+      ]
+    },
+    "ScheduleRequest": {
+      "fields": [
+        {
+          "name": "symbol",
+          "type": "string",
+          "id": 1,
+          "description": ""
+        }
+      ]
+    },
+    "ScheduleResponse": {
+      "fields": [
+        {
+          "name": "symbol",
+          "type": "string",
+          "id": 1,
+          "description": ""
+        },
+        {
+          "name": "sessions",
+          "type": "Sessions",
+          "rule": "repeated",
+          "id": 2,
+          "description": ""
+        }
+      ]
+    },
+    "ClockRequest": {
+      "fields": []
+    },
+    "ClockResponse": {
+      "fields": [
+        {
+          "name": "timestamp",
+          "type": "google.protobuf.Timestamp",
+          "id": 1,
+          "description": ""
+        }
+      ]
+    },
+    "Exchange": {
+      "fields": [
+        {
+          "name": "mic",
+          "type": "string",
+          "id": 1,
+          "description": ""
+        },
+        {
+          "name": "name",
+          "type": "string",
+          "id": 2,
+          "description": ""
+        }
+      ]
+    },
+    "Asset": {
+      "fields": [
+        {
+          "name": "symbol",
+          "type": "string",
+          "id": 1,
+          "description": ""
+        },
+        {
+          "name": "id",
+          "type": "string",
+          "id": 2,
+          "description": ""
+        },
+        {
+          "name": "ticker",
+          "type": "string",
+          "id": 3,
+          "description": ""
+        },
+        {
+          "name": "mic",
+          "type": "string",
+          "id": 4,
+          "description": ""
+        },
+        {
+          "name": "isin",
+          "type": "string",
+          "id": 5,
+          "description": ""
+        },
+        {
+          "name": "type",
+          "type": "string",
+          "id": 6,
+          "description": ""
+        },
+        {
+          "name": "name",
+          "type": "string",
+          "id": 7,
+          "description": ""
+        }
+      ]
+    },
+    "Option": {
+      "fields": [
+        {
+          "name": "symbol",
+          "type": "string",
+          "id": 1,
+          "description": ""
+        },
+        {
+          "name": "type",
+          "type": "Type",
+          "id": 2,
+          "description": ""
+        },
+        {
+          "name": "contract_size",
+          "type": "google.type.Decimal",
+          "id": 4,
+          "description": ""
+        },
+        {
+          "name": "trade_first_day",
+          "type": "google.type.Date",
+          "id": 5,
+          "description": ""
+        },
+        {
+          "name": "trade_last_day",
+          "type": "google.type.Date",
+          "id": 6,
+          "description": ""
+        },
+        {
+          "name": "strike",
+          "type": "google.type.Decimal",
+          "id": 7,
+          "description": ""
+        },
+        {
+          "name": "multiplier",
+          "type": "google.type.Decimal",
+          "id": 9,
+          "description": ""
+        }
+      ]
+    },
+    "Longable": {
+      "fields": [
+        {
+          "name": "value",
+          "type": "Status",
+          "id": 1,
+          "description": ""
+        },
+        {
+          "name": "halted_days",
+          "type": "int32",
+          "id": 2,
+          "description": ""
+        }
+      ]
+    },
+    "Shortable": {
+      "fields": [
+        {
+          "name": "value",
+          "type": "Status",
+          "id": 1,
+          "description": ""
+        },
+        {
+          "name": "halted_days",
+          "type": "int32",
+          "id": 2,
+          "description": ""
+        }
+      ]
+    }
+  },
+  "enums": {
+    "Side": {
+      "values": {
+        "SIDE_UNSPECIFIED": 0,
+        "SIDE_BUY": 1,
+        "SIDE_SELL": 2
+      },
+      "description": ""
+    },
+    "TimeFrame": {
+      "values": {
+        "TIME_FRAME_UNSPECIFIED": 0,
+        "TIME_FRAME_M1": 1,
+        "TIME_FRAME_M5": 5,
+        "TIME_FRAME_M15": 9,
+        "TIME_FRAME_M30": 11,
+        "TIME_FRAME_H1": 12,
+        "TIME_FRAME_H2": 13,
+        "TIME_FRAME_H4": 15,
+        "TIME_FRAME_H8": 17,
+        "TIME_FRAME_D": 19,
+        "TIME_FRAME_W": 20,
+        "TIME_FRAME_MN": 21,
+        "TIME_FRAME_QR": 22
+      },
+      "description": ""
+    },
+    "OrderType": {
+      "values": {
+        "ORDER_TYPE_UNSPECIFIED": 0,
+        "ORDER_TYPE_MARKET": 1,
+        "ORDER_TYPE_LIMIT": 2,
+        "ORDER_TYPE_STOP": 3,
+        "ORDER_TYPE_STOP_LIMIT": 4,
+        "ORDER_TYPE_MULTI_LEG": 5
+      },
+      "description": ""
+    },
+    "TimeInForce": {
+      "values": {
+        "TIME_IN_FORCE_UNSPECIFIED": 0,
+        "TIME_IN_FORCE_DAY": 1,
+        "TIME_IN_FORCE_GOOD_TILL_CANCEL": 2,
+        "TIME_IN_FORCE_GOOD_TILL_CROSSING": 3,
+        "TIME_IN_FORCE_EXT": 4,
+        "TIME_IN_FORCE_ON_OPEN": 5,
+        "TIME_IN_FORCE_ON_CLOSE": 6,
+        "TIME_IN_FORCE_IOC": 7,
+        "TIME_IN_FORCE_FOK": 8
+      },
+      "description": ""
+    },
+    "StopCondition": {
+      "values": {
+        "STOP_CONDITION_UNSPECIFIED": 0,
+        "STOP_CONDITION_LAST_UP": 1,
+        "STOP_CONDITION_LAST_DOWN": 2
+      },
+      "description": ""
+    },
+    "OrderStatus": {
+      "values": {
+        "ORDER_STATUS_UNSPECIFIED": 0,
+        "ORDER_STATUS_NEW": 1,
+        "ORDER_STATUS_PARTIALLY_FILLED": 2,
+        "ORDER_STATUS_FILLED": 3,
+        "ORDER_STATUS_DONE_FOR_DAY": 4,
+        "ORDER_STATUS_CANCELED": 5,
+        "ORDER_STATUS_REPLACED": 6,
+        "ORDER_STATUS_PENDING_CANCEL": 7,
+        "ORDER_STATUS_REJECTED": 9,
+        "ORDER_STATUS_SUSPENDED": 10,
+        "ORDER_STATUS_PENDING_NEW": 11,
+        "ORDER_STATUS_EXPIRED": 13,
+        "ORDER_STATUS_FAILED": 16,
+        "ORDER_STATUS_FORWARDING": 17,
+        "ORDER_STATUS_WAIT": 18,
+        "ORDER_STATUS_DENIED_BY_BROKER": 19,
+        "ORDER_STATUS_REJECTED_BY_EXCHANGE": 20,
+        "ORDER_STATUS_WATCHING": 21,
+        "ORDER_STATUS_EXECUTED": 22,
+        "ORDER_STATUS_DISABLED": 23,
+        "ORDER_STATUS_LINK_WAIT": 24,
+        "ORDER_STATUS_SL_GUARD_TIME": 27,
+        "ORDER_STATUS_SL_EXECUTED": 28,
+        "ORDER_STATUS_SL_FORWARDING": 29,
+        "ORDER_STATUS_TP_GUARD_TIME": 30,
+        "ORDER_STATUS_TP_EXECUTED": 31,
+        "ORDER_STATUS_TP_CORRECTION": 32,
+        "ORDER_STATUS_TP_FORWARDING": 33,
+        "ORDER_STATUS_TP_CORR_GUARD_TIME": 34
+      },
+      "description": ""
+    }
+  }
+}
